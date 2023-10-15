@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/output.css}" rel="stylesheet">
+    <title>Users</title>
+</head>
+<body>
+
+<!--Navigation Bar-->
+<!--Navigation Bar-->
+<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+        <a th:href="@{/home/} + ${admin.username}" class="flex items-center">
+            <img src="../media/Rahgir_Icon.svg" class="h-8 mr-4 lg:h-20" alt="Rahgeer Logo" />
+            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Rahgeer</span>
+        </a>
+        <div class="flex md:order-2">
+            <div class="flex md:order-2">
+                <a th:href="@{/cover}" class="mt-4 mr-4 mb-6 px-5 py-2 text-xl rounded-full font-medium font-serif text-center text-white bg-[#0A2035] hover:bg-orange-500">
+                    Logout
+                </a>
+            </div>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+            <div class="relative mt-3 md:hidden">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </div>
+                <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+            </div>
+            <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a th:href="@{/home/} + ${admin.username}" class="block text-lg py-2 pl-3 pr-4 text-white bg-orange-600 rounded md:hover:text-orange-300 md:bg-transparent md:text-orange-600 md:p-0 dark:text-white" aria-current="page">Home</a>
+                </li>
+                <li>
+                    <a th:href="@{/userCategories/} + ${admin.username}" class="block text-lg py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-500 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Users</a>
+                </li>
+                <li>
+                    <a th:href="@{/report/} + ${admin.username}" class="block text-lg py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-500 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Reports</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class = "py-24 flex justify-center space-x-7">
+    <div>
+        <a th:href="@{/listOfTourists/} + ${admin.username}">
+            <button
+                    class="text-lg px-20 py-12 mt-4 font-lg leading-5 text-center text-black  bg-sky-800 transition-colors duration-150  rounded-lg active:bg-sky-700 hover:bg-sky-700 focus:outline-none focus:shadow-outline-blue">
+                <img class="h-18 w-12 object-cover object-center"
+                     src="../media/user.svg" alt="use">
+                <div class = "py-2"></div>
+                Tourists
+            </button>
+        </a>
+    </div>
+    <div>
+        <a th:href="@{/listOfHosts/} + ${admin.username}">
+        <button
+                class="text-lg px-20 py-11 mt-4 font-lg leading-5 text-center text-black   bg-gray-700 transition-colors duration-150  rounded-lg active:bg-gray-800 hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue">
+            <img class="h-18 w-14 object-cover object-center"
+                 src="../media/user.svg" alt="use">
+            <div class = "py-2"></div>
+            Hosts
+        </button>
+        </a>
+    </div>
+    <div>
+        <a th:href="@{/listOfBlockedTourists/} + ${admin.username}">
+            <button
+                    class="text-lg px-20 py-12 mt-4 font-lg leading-5 text-center text-black transition-colors duration-150 bg-orange-700 border-transparent rounded-lg active:bg-orange-900 hover:bg-orange-900 focus:outline-none focus:shadow-outline-blue">
+                <img class="h-18 w-11 object-cover object-center"
+                     src="../media/blockedUser.svg" alt="use">
+                <div class = "py-2"></div>
+                Blocked
+            </button>
+        </a>
+    </div>
+</div>
+</body>
+</html>

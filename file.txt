@@ -1,0 +1,39 @@
+  <!--Page central Profile layout-->
+  <div class="flex items-start py-6 w-full h-screen bg-gray-50 text-center justify-center" >
+    <div class="flex-col">
+      <div class="flex-col items-center px-6 py-6 bg-white text-center justify-center">
+        <!--Pictures place-->
+        <div class="flex justify-center px-2 pr-7 items-center">
+          <img class="p-2 w-48 h-auto ring-orange-600 dark:ring-gray-500" src="../media/noplace.png" alt="Bordered avatar">
+          <div class="flex-col justify-start pl-10">
+            <div class="flex px-8 pt-6  text-3xl text-gray-900 font-serif font-bold items-center" id="username" th:text="${place.placeName}"></div>
+              <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'City: ' + ${place.city}"></div>
+              <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'Address: ' + ${place.placeAddress}"></div>
+              <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'Host Name: ' + ${place.host.user.name}"></div>
+              <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'Host Email: ' + ${place.host.user.email}"></div>
+              <td th:switch="${type}">
+              <div th:case="'restaurant'">
+                  <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'Total Tables: ' + ${restaurant.tableCount}"></div>
+              </div>
+                <div th:case="'hotel'">
+                    <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'Total Rooms: ' + ${hotel.roomCount}"></div>
+                    <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'Price Per Night: ' + ${hotel.pricePerNight}"></div>
+                </div>
+                <div th:case="'hostel'">
+                    <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'Total Rooms: ' + ${hostel.roomCount}"></div>
+                    <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'Beds Per Room: ' + ${hostel.bedsPerRoom}"></div>
+                    <div class="flex py-2 px-8 md\:text-sm text-gray-900 font-serif font-bold items-center" id="username" th:text="'Price Per bed: ' + ${hostel.pricePerNight}"></div>
+                </div>
+                </td>
+      </div>
+      <div class="flex items-center bg-gray-50 p-4 justify-center hover:bg-white">
+        <a href="#">
+        <button type="submit" class="px-3 shadow-2xl shadow-black py-2 text-sm font-medium font-serif text-center bg-[#0A2035] hover:bg-blue-800 rounded-lg text-white">
+        Update Place Information
+        </button>
+        </a>
+    </div>
+    </div>
+  </div>
+    </div>
+    </div>

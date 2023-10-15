@@ -1,0 +1,115 @@
+<!-- Plan Trip Page 4 Trip Details-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/output.css}" />
+    <title>Trip Details</title>
+</head>
+
+<body class=""> 
+<form class = "px-4 my-8 max-w-3xl mx-auto space-y-6">
+<h1 class = "py-5 text-4xl font-bold">Trip Details</h1>
+<div class = "flex space-x-4">
+    <p class = "text-lg font-bold">Source: </p>
+    <output type="message" name="source" id="source" class="bg-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 mt-1 block w-144 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-red-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Dummy data</output>
+</div>
+<div class = "flex space-x-4">
+<p class = "text-lg font-bold">Destination: </p>
+<output type="message" name="dest" id="dest" class="bg-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 mt-1 block w-144 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-red-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Dummy data</output>
+</div>
+<div class = "py-4 flex space-x-4">
+    <p class = "text-lg font-bold">Start Date: </p>
+    <output type="date" name="startDate" id="startDate" class="bg-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 mt-1 block w-144 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-red-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Dummy data</output>
+    </div>
+<div class = "flex space-x-4">
+<p class = "text-lg font-bold">End date: </p>
+<output type="date" name="endDate" id="endDate" class="bg-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 mt-1 block w-144 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-red-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Dummy data</output>
+</div>
+<p class = "py-8 text-lg font-bold">Budget Breakdown</p>
+
+<div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-white uppercase bg-sky-900 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="py-3 px-6">
+                    Boarding
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Meals
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Travel
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Total
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-separate dark:bg-gray-800 dark:border-black hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td class="py-4 px-6">
+                    <output type="float" name="bcost" id="bcost" class="bg-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 mt-1 block w-144 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-red-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Dummy data</output>
+                </td>
+                <td class="py-4 px-6">
+                    <output type="float" name="mcost" id="mcost" class="bg-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 mt-1 block w-144 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-red-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Dummy data</output>
+                </td>
+                <td class="py-4 px-6">
+                    <output type="float" name="tcost" id="tcost" class="bg-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 mt-1 block w-144 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-red-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Dummy data</output>
+                </td>
+                <td class="py-4 px-6">
+                    <output type="float" name="cost" id="cost" class="bg-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 mt-1 block w-144 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-red-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Dummy data</output>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <div class="flex w-full justify-start">
+    <label class="text-xl font-bold">Places Booked</label>
+    </div>
+    <div class="flex flex-wrap justify-center w-full h-auto">
+        <!--loop starts here-->
+  <ul class="p-4">
+  <a href="../host/place.html" class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 hover:scale-110 ease-in duration-300 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="pics/getMailforForgotPassword.jpg" alt="">
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Place</h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Place Description</p>
+    </div>
+  </a>
+</ul>
+  <!--loop ends here--> 
+
+</div>
+</div>
+
+
+<div class = "py-8 flex justify-between">
+    <div> <!--Rerout to upcomming trips-->
+    <button type="submit"
+    class="block px-12 py-3 mt-4 text-sm font-medium text-center text-white transition-colors duration-150 bg-sky-900 border border-transparent rounded-lg active:bg-sky-800 hover:bg-sky-800 focus:outline-none focus:shadow-outline-blue">
+    Book Trip
+    </button>
+    </div>
+    <div> <!--Rerout to unconfirmed trips page-->
+    <button type="submit"
+    class="block px-12 py-3 mt-4 text-sm font-medium text-center text-white transition-colors duration-150 bg-gray-600 border border-transparent rounded-lg active:bg-gray-700 hover:bg-gray-700 focus:outline-none focus:shadow-outline-blue">
+    Save for Later
+    </button>
+    </div>
+    <div><!--Rerout to tourist's home page-->
+    <button type="submit"
+    class="block px-12 py-3 mt-4 text-sm font-medium text-center text-white transition-colors duration-150 bg-gray-900 border border-transparent rounded-lg active:bg-black hover:bg-black focus:outline-none focus:shadow-outline-blue">
+    Discard
+    </button>
+    </div>
+</div>
+
+</form>
+
+</body>

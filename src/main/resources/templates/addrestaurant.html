@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/output.css}"  rel="stylesheet">
+    <title>Add Restaurant</title>
+</head>
+<body class="w-full h-screen bg-cover"
+style="background-image: url('../media/SadparaLakeLogin.jpg');">
+  <div>
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+           
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <a th:href="@{/goToHome/} + ${host.username}" class="flex items-center mb-6 text-2xl font-bold text-gray-900 dark:text-white">
+                    <img class="w-14 h-20 mr-4" src="../media/Rahgir_Icon.svg" alt="logo">
+                    Rahgeer    
+                </a>
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    Add Restaurant
+                </h1>
+                <!--Enter action according to which type of user was enterred change by changing the # in action or however handed in the backend-->
+                <form class="space-y-4 md:space-y-6" th:action="@{/addRestaurant/} + ${host.username}" method="post">
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name" required="">
+                    </div>
+                    <div>
+                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                        <input type="text" name="description" id="description" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name" required="">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
+                        <input type="text" name="city" id="city" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="City" required="">
+                    </div>
+                    <div>
+                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                        <input type="text" name="address" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Address" required="">
+                    </div>
+                    <div>
+                        <label for="noOfrooms" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Number of Tables</label>
+                        <input type="number" name="noOfrooms" id="noOfrooms" min="1" max="10000" step="1" value="" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="xx" required="">
+                    </div>
+                    <div></div>
+                    
+                <div class="flex items-center justify-start">
+                    <output type="message" name="errorMessage" id="errorMessage" class="bg-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-144 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 text-red-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></output>
+                </div>
+                </div>
+                    <button type="submit" class="w-full justify-center text-white bg-sky-900 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
